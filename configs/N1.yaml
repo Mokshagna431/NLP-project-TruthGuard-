@@ -1,0 +1,19 @@
+name: "N1"
+description: "Dense SBERT retrieval + DeBERTa-v3 NLI verifier (V2)"
+retriever:
+  type: "dense_sbert"
+  dense_model: "sentence-transformers/all-mpnet-base-v2"
+  k_d: 5
+  k_s: 5
+  gate_tau_r: 0.25
+verifier:
+  type: "nli" # V2
+  model_name: "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli"
+  tau_e: 0.70
+  tau_c: 0.70
+  temperature: 1.0
+decomposer:
+  type: "atomic_llm"
+scoring:
+  lambda_nei: 0.5
+seeds: [42, 123, 999]

@@ -1,0 +1,6 @@
+{"id": "ragtruth_qa_01", "task_type": "QA", "gold_response": 0, "pred_response": 0, "hallucination_score": 0.0004870891571044922, "span_f1": 1.0}
+{"id": "ragtruth_qa_02", "task_type": "QA", "gold_response": 1, "pred_response": 1, "hallucination_score": 1.0, "span_f1": 0.0}
+{"id": "ragtruth_data2text_01", "task_type": "Data2Text", "gold_response": 0, "pred_response": 0, "hallucination_score": 0.0003726482391357422, "span_f1": 1.0}
+{"id": "ragtruth_data2text_02", "task_type": "Data2Text", "gold_response": 1, "pred_response": 1, "hallucination_score": 0.9990234375, "span_f1": 0.0}
+{"id": "ragtruth_summary_01", "task_type": "Summary", "gold_response": 0, "pred_response": 0, "hallucination_score": 0.00010877847671508789, "span_f1": 1.0}
+{"id": "ragtruth_summary_02", "task_type": "Summary", "gold_response": 1, "pred_response": 1, "hallucination_score": 1.0, "span_f1": 0.0}

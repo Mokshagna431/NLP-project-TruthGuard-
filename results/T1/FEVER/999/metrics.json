@@ -1,0 +1,10 @@
+{
+  "Recall@5": 1.0,
+  "Label_Accuracy": 0.3,
+  "Macro_F1": 0.24444444444444446,
+  "FEVER_Score": 0.3,
+  "F1_NEI": 0.4,
+  "F1_SUPPORTS": 0.3333333333333333,
+  "F1_REFUTES": 0.0,
+  "git_commit": "git_commit_dev"
+}

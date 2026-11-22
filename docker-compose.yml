@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: truthguard_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: truthguard
+      POSTGRES_PASSWORD: truthguard_password_2026
+      POSTGRES_DB: truthguard_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: truthguard_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg2://truthguard:truthguard_password_2026@db:5432/truthguard_db
+      JWT_SECRET_KEY: truthguard-docker-secret-key-production-2026
+      PORT: 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: truthguard_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

@@ -1,0 +1,6 @@
+{
+  "Response_F1": 0.8,
+  "Span_F1": 0.6229603729603729,
+  "AUROC": 0.888888888888889,
+  "git_commit": "git_commit_dev"
+}

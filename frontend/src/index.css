@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap');
+
+:root {
+  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Editorial Warm Proof Desk Palette */
+  --bg-app: #FAF8F5;
+  --bg-sidebar: #FDFCFA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F5F3ED;
+  --bg-hover: #ECE9E1;
+  --border-subtle: #E8E5DC;
+  --border-strong: #D5D1C6;
+
+  /* Typography Colors */
+  --text-main: #181614;
+  --text-secondary: #57534E;
+  --text-muted: #8B857D;
+  --text-faint: #B5AFA6;
+
+  /* Brand Accents */
+  --accent-purple: #5E50EE;
+  --accent-purple-hover: #4D3ED6;
+  --accent-purple-subtle: #EEECFC;
+  --accent-red: #DC2626;
+  --accent-dark: #1A1816;
+
+  /* Verification Statuses */
+  --status-accurate-bg: #DCFCE7;
+  --status-accurate-text: #15803D;
+  --status-accurate-pill-bg: #E6F7ED;
+  --status-accurate-pill-border: #BBF7D0;
+
+  --status-inaccurate-bg: #FED7AA;
+  --status-inaccurate-text: #C2410C;
+  --status-inaccurate-pill-bg: #FFEDD5;
+  --status-inaccurate-pill-border: #FDBA74;
+
+  --status-subjective-bg: #FEF08A;
+  --status-subjective-text: #854D0E;
+  --status-subjective-pill-bg: #FEF9C3;
+  --status-subjective-pill-border: #FDE047;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5D1C6;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A29E;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Text Highlighting in Document Reader (Matches Parafact Image 1) */
+.highlight-inaccurate {
+  background-color: #FED7AA;
+  color: #7C2D12;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border-bottom: 2px solid #FB923C;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline;
+}
+
+.highlight-inaccurate:hover,
+.highlight-inaccurate.is-active {
+  background-color: #FDBA74;
+  box-shadow: 0 0 0 2px #EA580C;
+}
+
+.highlight-accurate {
+  background-color: #BBF7D0;
+  color: #14532D;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border-bottom: 2px solid #4ADE80;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline;
+}
+
+.highlight-accurate:hover,
+.highlight-accurate.is-active {
+  background-color: #86EFAC;
+  box-shadow: 0 0 0 2px #16A34A;
+}
+
+.highlight-subjective {
+  background-color: #FEF08A;
+  color: #713F12;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border-bottom: 2px solid #FACC15;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline;
+}
+
+/* Factcheck Cards Animation & Pulse */
+@keyframes highlightPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.015); box-shadow: 0 4px 20px rgba(94, 80, 238, 0.15); }
+  100% { transform: scale(1); }
+}
+
+.claim-card-active {
+  border-color: #5E50EE !important;
+  box-shadow: 0 0 0 2px rgba(94, 80, 238, 0.25), 0 4px 12px rgba(0, 0, 0, 0.04);
+  animation: highlightPulse 0.4s ease-out;
+}
+
+/* Progress bar shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.progress-shimmer {
+  background: linear-gradient(90deg, #22C55E 0%, #4ADE80 50%, #22C55E 100%);
+  background-size: 200% 100%;
+}

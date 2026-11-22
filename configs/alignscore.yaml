@@ -1,0 +1,6 @@
+name: "alignscore"
+description: "External baseline: AlignScore metric on context-sentence pairs"
+baseline:
+  type: "alignscore"
+  model_name: "AlignScore-large"
+seeds: [42, 123, 999]

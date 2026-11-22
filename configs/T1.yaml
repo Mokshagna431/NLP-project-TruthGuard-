@@ -1,0 +1,16 @@
+name: "T1"
+description: "Fully traditional baseline: BM25 sparse retrieval + TF-IDF cosine similarity (V1)"
+retriever:
+  type: "bm25"
+  k_d: 5
+  k_s: 5
+  gate_tau_r: 0.1
+verifier:
+  type: "similarity" # V1
+  model_name: "tfidf"
+  tau_sim: 0.65
+decomposer:
+  type: "atomic_llm"
+scoring:
+  lambda_nei: 0.5
+seeds: [42, 123, 999]

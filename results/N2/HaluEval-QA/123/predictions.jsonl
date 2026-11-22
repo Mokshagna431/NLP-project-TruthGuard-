@@ -1,0 +1,8 @@
+{"id": "halu_01_right", "gold": 0, "pred": 0, "hallucination_score": 0.3249234358469645}
+{"id": "halu_01_hallu", "gold": 1, "pred": 1, "hallucination_score": 0.9990234375}
+{"id": "halu_02_right", "gold": 0, "pred": 0, "hallucination_score": 0.003031611442565918}
+{"id": "halu_02_hallu", "gold": 1, "pred": 1, "hallucination_score": 0.9992034435272217}
+{"id": "halu_03_right", "gold": 0, "pred": 0, "hallucination_score": 0.0017299652099609375}
+{"id": "halu_03_hallu", "gold": 1, "pred": 1, "hallucination_score": 0.9991757869720459}
+{"id": "halu_04_right", "gold": 0, "pred": 0, "hallucination_score": 0.4988288879394531}
+{"id": "halu_04_hallu", "gold": 1, "pred": 1, "hallucination_score": 0.9938850402832031}

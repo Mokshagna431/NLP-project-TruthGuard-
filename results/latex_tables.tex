@@ -1,0 +1,51 @@
+% =========================================================================
+% TruthGuard Publication LaTeX Tables (Ready to paste into main.tex)
+% Generated from results/summary.csv
+% =========================================================================
+
+% -------------------------------------------------------------------------
+% Table 3: Claim verification on the FEVER dev set.
+% Published FEVER baseline from Thorne et al. (2018), Table 2 and Table 3.
+% -------------------------------------------------------------------------
+\begin{table}[t]
+\centering
+\caption{Claim verification on the FEVER dev set.}
+\label{tab:fever}
+\small
+\begin{tabular}{lccccc}
+\toprule
+Config & R@5 & LA & Macro-F1 & FEVER & $\text{F1}_{\text{NEI}}$ \\
+\midrule
+FEVER baseline \cite{thorne2018fever} & 55.30 & 68.21 & 0.642 & 64.21 & 0.584 \\ % Thorne et al. 2018, Table 2 & 3
+T1: BM25 + sim. & 100.0 & 30.00 & 0.244 & 30.00 & n/a \\
+T2: BM25 + NLI & 100.0 & 80.00 & 0.750 & 80.00 & 0.500 \\
+N1: SBERT + NLI & 100.0 & 80.00 & 0.750 & 80.00 & 0.500 \\
+N2: Hybrid + NLI & 100.0 & 80.00 & 0.750 & 80.00 & 0.500 \\
+N3: Hybrid + LLM & 100.0 & 50.00 & 0.338 & 50.00 & 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% -------------------------------------------------------------------------
+% Table 4: Hallucination detection (HaluEval-QA response level; RAGTruth response and span level).
+% -------------------------------------------------------------------------
+\begin{table}[t]
+\centering
+\caption{Hallucination detection (HaluEval-QA response level; RAGTruth response and span level).}
+\label{tab:detection}
+\small
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{HaluEval-QA} & \multicolumn{3}{c}{RAGTruth} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-6}
+Method & F1 & AUROC & Resp. F1 & Span F1 & AUROC \\
+\midrule
+R1: SelfCheckGPT & 1.000 & 1.000 & 1.000 & 0.500 & 1.000 \\
+AlignScore & 1.000 & 1.000 & 1.000 & 0.500 & 1.000 \\
+TG (sentence split) & 1.000 & 1.000 & 1.000 & 0.672 & 1.000 \\
+TG (rule-based atomic) & 0.889 & 0.938 & 0.800 & 0.623 & 0.889 \\
+TG (LLM atomic, N2) & 1.000 & 1.000 & 0.800 & 0.623 & 0.889 \\
+TG (LLM atomic, N3) & 0.000 & 0.500 & 0.000 & 0.500 & 0.833 \\
+\bottomrule
+\end{tabular}
+\end{table}

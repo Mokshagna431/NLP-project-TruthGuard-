@@ -1,0 +1,19 @@
+name: "N3"
+description: "Hybrid retrieval + CrossEncoder re-ranker + LLM Judge verifier (V3)"
+retriever:
+  type: "hybrid"
+  dense_model: "sentence-transformers/all-mpnet-base-v2"
+  reranker_model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+  rrf_k: 60
+  k_d: 5
+  k_s: 5
+  gate_tau_r: 0.10
+verifier:
+  type: "llm_judge" # V3
+  model_name: "Qwen/Qwen2.5-7B-Instruct"
+  temperature: 0.0
+decomposer:
+  type: "atomic_llm"
+scoring:
+  lambda_nei: 0.5
+seeds: [42, 123, 999]

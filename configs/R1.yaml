@@ -1,0 +1,8 @@
+name: "R1"
+description: "Reference-free baseline: SelfCheckGPT-NLI (N=20 samples)"
+baseline:
+  type: "selfcheckgpt_nli"
+  num_samples: 20
+  sampling_temperature: 1.0
+  nli_model: "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli"
+seeds: [42, 123, 999]
